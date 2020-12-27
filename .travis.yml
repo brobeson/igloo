@@ -74,9 +74,11 @@ install:
   - pip install --user ${USER} lizard
   - wget https://github.com/Kitware/CMake/releases/download/v3.19.2/cmake-3.19.2-Linux-x86_64.sh
   - chmod 744 cmake-3.19.2-Linux-x86_64.sh
-  - ./cmake-3.19.2-Linux-x86_64.sh --prefix=/home/travis --skip-license
-  - ls -o /home/travis/
-  - echo ${PATH}
+  - mkdir ~/cmake
+  - ./cmake-3.19.2-Linux-x86_64.sh --prefix=~/cmake --skip-license
+  - ln -s ~/cmake/bin/cmake ~/bin/cmake
+  - ln -s ~/cmake/bin/ctest ~/bin/ctest
+  - ln -s ~/cmake/bin/cpack ~/bin/cpack
 
   # Set up a build directory, because in-source builds are not allowed.
   - source_directory="${TRAVIS_BUILD_DIR}"
