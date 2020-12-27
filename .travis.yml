@@ -73,6 +73,7 @@ install:
   - eval "${MATRIX_EVAL}"
   - pip install --user ${USER} lizard
   - wget https://github.com/Kitware/CMake/releases/download/v3.19.2/cmake-3.19.2-Linux-x86_64.sh
+  - chmod 744 cmake-3.19.2-Linux-x86_64.sh
   - ./cmake-3.19.2-Linux-x86_64.sh --prefix=/home/travis/cmake --skip-license
   - ls -o /home/travis/cmake
   - echo ${PATH}
