@@ -24,3 +24,15 @@ if(cppcheck)
 else()
   message(AUTHOR_WARNING "I could not find cppcheck. Cppcheck is disabled.")
 endif()
+
+find_program(iwyu iwyu)
+if(iwyu)
+  if(NOT DEFINED CMAKE_CXX_INCLUDE_WHAT_YOU_USE)
+    set(CMAKE_CXX_INCLUDE_WHAT_YOU_USE ${iwyu})
+  endif()
+else()
+  message(
+    AUTHOR_WARNING
+    "I could not find Include What You Use. IWYU analysis is disabled."
+  )
+endif()
