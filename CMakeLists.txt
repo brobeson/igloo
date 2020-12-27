@@ -15,7 +15,6 @@ if(BUILD_TESTING)
   add_subdirectory(unit_tests)
 endif()
 
-# TODO - Add cppcheck.
 # TODO - Add lizard.
 # TODO - Add unit test coverage.
 # TODO - Add travis-ci.
