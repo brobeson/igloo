@@ -57,3 +57,13 @@ else()
     "I could not find Lizard. Complexity analysis is disabled."
   )
 endif()
+
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+  doxygen_add_docs(doxygen ${CMAKE_SOURCE_DIR}/igloo ALL)
+else()
+  message(
+    AUTHOR_WARNING
+    "I could not find Doxygen. Documentation will not be generated."
+  )
+endif()

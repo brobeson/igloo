@@ -15,12 +15,11 @@ if(BUILD_TESTING)
   add_subdirectory(unit_tests)
 endif()
 
-# TODO - Add unit test coverage.
 # TODO - Add travis-ci.
 # TODO - Add appveyor.
-# TODO - Add doxygen.
-# TODO - Add sphinx/breathe.
-# TODO - Have catch search for unit tests.
 # TODO - Add address sanitizer.
 # TODO - Add ub sanitizer.
+# TODO - Add unit test coverage.
+# TODO - Add sphinx/breathe.
+# TODO - Have catch search for unit tests.
 # TODO - Add packaging.
