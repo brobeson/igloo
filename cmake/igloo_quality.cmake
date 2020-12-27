@@ -36,3 +36,24 @@ else()
     "I could not find Include What You Use. IWYU analysis is disabled."
   )
 endif()
+
+find_program(lizard lizard)
+if(lizard)
+  add_custom_target(
+    lizard
+    ALL
+    COMMAND
+      ${lizard}
+      --CCN 10
+      --length 20
+      --arguments 5
+      --warnings_only
+      --modified
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+  )
+else()
+  message(
+    AUTHOR_WARNING
+    "I could not find Lizard. Complexity analysis is disabled."
+  )
+endif()
