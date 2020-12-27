@@ -72,6 +72,8 @@ matrix:
 install:
   - eval "${MATRIX_EVAL}"
   - pip install --user ${USER} lizard
+  - wget https://github.com/Kitware/CMake/releases/download/v3.19.2/cmake-3.19.2-Linux-x86_64.sh
+  - echo ${PATH}
 
   # Set up a build directory, because in-source builds are not allowed.
   - source_directory="${TRAVIS_BUILD_DIR}"
@@ -82,6 +84,7 @@ before_script:
   - shopt -s globstar
 
 script:
+  # TODO Export compile commands and add it to the cppcheck command
   - cd "${source_directory}"
   - cppcheck
     --quiet
