@@ -75,6 +75,7 @@ install:
   - wget https://github.com/Kitware/CMake/releases/download/v3.19.2/cmake-3.19.2-Linux-x86_64.sh
   - chmod 744 cmake-3.19.2-Linux-x86_64.sh
   - mkdir ~/cmake
+  - ls -l
   - ./cmake-3.19.2-Linux-x86_64.sh --prefix=~/cmake --skip-license
   - ln -s ~/cmake/bin/cmake ~/bin/cmake
   - ln -s ~/cmake/bin/ctest ~/bin/ctest
