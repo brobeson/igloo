@@ -11,12 +11,13 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-xenial-8
+            - llvm-toolchain-bionic-11
           packages:
             - cppcheck
             - g++-7
             - clang-format-8
             - clang-tidy-8
+            - iwyu
             - valgrind
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
@@ -26,12 +27,13 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-xenial-8
+            - llvm-toolchain-bionic-11
           packages:
             - cppcheck
             - g++-8
             - clang-format-8
             - clang-tidy-8
+            - iwyu
             - valgrind
       env:
         - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
@@ -42,12 +44,13 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-xenial-7
-            - llvm-toolchain-xenial-8
+            - llvm-toolchain-bionic-11
           packages:
             - cppcheck
             - clang-7
             - clang-format-8
             - clang-tidy-8
+            - iwyu
             - libc++-7-dev
             - valgrind
       env:
@@ -58,12 +61,13 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-xenial-8
+            - llvm-toolchain-bionic-11
           packages:
             - cppcheck
             - clang-8
             - clang-format-8
             - clang-tidy-8
+            - iwyu
             - libc++-8-dev
             - valgrind
       env:
@@ -76,6 +80,7 @@ install:
   - chmod 744 cmake-3.19.2-Linux-x86_64.sh
   - mkdir /home/travis/cmake
   - ./cmake-3.19.2-Linux-x86_64.sh --prefix=/home/travis/cmake --skip-license
+  - rm cmake-3.19.2-Linux-x86_64.sh
   - ln -s /home/travis/cmake/bin/cmake /home/travis/bin/cmake
   - ln -s /home/travis/cmake/bin/ctest /home/travis/bin/ctest
   - ln -s /home/travis/cmake/bin/cpack /home/travis/bin/cpack
