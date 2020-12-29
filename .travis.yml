@@ -13,7 +13,9 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-bionic-11
           packages:
+            - catch2
             - cppcheck
+            - doxygen
             - g++-7
             - clang-format-8
             - clang-tidy-8
@@ -29,7 +31,9 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-bionic-11
           packages:
+            - catch2
             - cppcheck
+            - doxygen
             - g++-8
             - clang-format-8
             - clang-tidy-8
@@ -46,10 +50,12 @@ matrix:
             - llvm-toolchain-xenial-7
             - llvm-toolchain-bionic-11
           packages:
+            - catch2
             - cppcheck
             - clang-7
             - clang-format-8
             - clang-tidy-8
+            - doxygen
             - iwyu
             - libc++-7-dev
             - valgrind
@@ -63,10 +69,12 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-bionic-11
           packages:
+            - catch2
             - cppcheck
             - clang-8
             - clang-format-8
             - clang-tidy-8
+            - doxygen
             - iwyu
             - libc++-8-dev
             - valgrind
